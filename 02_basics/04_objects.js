@@ -57,5 +57,33 @@ users[1].email
 // console.log(Object.keys(tinderUser));
 // console.log(Object.values(tinderUser));
 //console.log(Object.entries(tinderUser));
-console.log(tinderUser.hasOwnProperty('isloggedin'));//rare
+// console.log(tinderUser.hasOwnProperty('isloggedin'));//rare
 
+
+
+
+const course = {
+ coursename:"js revision",
+ courseinstructor:"harshit",
+ price: 500
+}
+
+const {courseinstructor} = course
+
+console.log(courseinstructor);
+
+//JSON api looks like this 
+// {
+//     name: "harshit",
+//     coursename: "JSON",
+//     price:"free"    
+
+// }
+
+// a JSON api array would look like this
+
+[
+    {},
+    {},
+    {}
+]
