@@ -1,4 +1,4 @@
-let rand = console.log(parseInt(Math.random()*100+1));
+let rand = parseInt(Math.random()*100+1);
 const submit = document.querySelector('#button');
 const userinput = document.querySelector('#text');
 const prevguess  = document.querySelector('.guesses');
@@ -22,7 +22,7 @@ if (playgame) {
 }
 
 function validateGuess(guess){
-    //
+    
    if(isNaN(guess)){
     alert('Please enter a valid number')
 
@@ -38,7 +38,7 @@ function validateGuess(guess){
   }
 if (numguess === 11){
     guessdisplay(guess)
-    displaymessage('game Over. The Random number was ${rand}')
+    displaymessage(`game Over. The Random number was ${rand}`)
     endgame()
 
 }
@@ -49,9 +49,9 @@ else {
 }
 }
 function checkguess(guess){
-  if(guess == rand){
+  if(guess === rand){
     displaymessage(`you guessed it right`);
-    endgame
+    endgame();
   }
   else if(guess < rand){
     displaymessage(`you number is too low`)
@@ -64,7 +64,7 @@ function checkguess(guess){
 }
 
 function displaymessage(message){
-  loworhi.innerHTML = `<h2>${message}</h2>`
+  loworhi.innerHTML = `<h2>${message}</h2>`;
 }
 function guessdisplay(guess){
     userinput.value = ''
@@ -86,9 +86,14 @@ function newgame() {
     const newgame = document.querySelector('#newgame')
     newgame.addEventListener('click',function(e){
         rand = console.log(parseInt(Math.random()*100+1));
-        prevguess = []
+        previousguess = [];
         numguess = 1
-        guessdisplay = 
-    })
+        prevguess.innerHTML = ''
+        lastresult.innerHTML = `${11 - numguess}`
+        userinput.removeAttribute('disabled')
+        result.removeChild(p)
+        playgame = true
+
+      })
 
 }

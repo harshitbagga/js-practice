@@ -12,9 +12,9 @@
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
             height: 100vh; /* Use the full viewport height */
-            display: flex;
+            /*display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center;*/
             align-items: center;
         }
 
@@ -26,18 +26,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 60vh;
-            margin-top: 20px; /* Adjust the margin as needed */
+            height: 80vh;
+            margin-top: 0px; /* Adjust the margin as needed */
         }
-
-        .baap h1 {
-            /* Adjustments for h1 */
-        }
-
-        .baap #text {
-            /* Adjustments for text input */
-        }
-
         .baap #button {
             margin-top: 40px;
         }
@@ -55,7 +46,7 @@
         <input type="submit" id="button" value="Submit Guess">
         <div class="result">
             <p>Previous Guesses:<span class="guesses"></span></p>
-            <p>Guess Remaining:<span class="lastresult"></span></p>
+            <p>Guess Remaining:<span class="lastresult">10</span></p>
             <p class="loworhi"></p>
       
           </div>
