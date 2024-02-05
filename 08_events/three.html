@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalid; // Declare intervalid outside the play function
+
+    const sayDate = function (str1) {
+        console.log(str1, Date.now());
+    }
+
+    function play(par) {
+        if (par === 1) {
+            intervalid = setInterval(sayDate, 1000, "hello");
+        } else {
+            clearInterval(intervalid);
+        }
+    }
+
+    document.querySelector('#start').addEventListener('click', function () {
+        play(1);
+    });
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        play(0);
+    });
+</script>
+</html>
