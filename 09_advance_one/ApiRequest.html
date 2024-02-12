@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: dimgray; ">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" id="photo" src="https://v1.tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <h1 class="font-bold text-xl mb-2" id="name">The Coldest Sunset</h1>
+          <p class="text-gray-700 text-base" id="followers">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2" id="span">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        </div>
+      </div>
+</body>
+<script>
+// const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+
+// const xhr =   new XMLHttpRequest();
+//    xhr.open('GET',requestURL)
+// xhr.onreadystatechange = function(){
+//     if (xhr.readyState === 4) {
+//         //console.log(xhr.responseText);//or we cal also do
+//         const data = JSON.parse(this.responseText); //consvert any data from  json to string
+//         console.log(typeof data);
+//         console.log(data.followers);
+//         const name = data.login
+//         console.log(name);
+
+//     }
+   
+//     console.log(xhr.readyState);
+
+
+//     // aasignment
+//     // photo, followers, name and make a card 
+// }
+// xhr.send();
+//first we open the http request and then get the data out of it
+//then we fetch the data in json format 
+//then we inject in innerhtml 
+const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+
+const xhr =   new XMLHttpRequest();
+   xhr.open('GET',requestURL)
+xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4) {
+        //console.log(xhr.responseText);//or we cal also do
+        const data = JSON.parse(this.responseText); //consvert any data from  json to string
+        console.log(typeof data);
+        console.log(data.followers);
+        const logindata =  data.name.toUpperCase()
+        
+    const photodata = data.avatar_url
+    var image = document.getElementById('photo');
+  image.src = photodata
+  var name = document.getElementById('name').innerHTML = logindata;
+  const followersdata = data.followers  
+  var followers  = document.getElementById('followers').innerHTML = 
+'Followers:- '+followersdata
+
+const removeelement = document.getElementById('span').remove()
+  
+
+    }
+       
+    console.log(xhr.readyState);
+
+    
+    // aasignment
+    // photo, followers, name and make a card 
+}
+  xhr.send();
+</script>
+</html>
